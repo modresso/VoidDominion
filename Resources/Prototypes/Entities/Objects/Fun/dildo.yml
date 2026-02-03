@@ -1,0 +1,46 @@
+- type: entity
+  parent: BaseItem
+  id: Dildo
+  name: Дилдак
+  description: Это дилдак!
+  components:
+  - type: EmbeddableProjectile
+    minimumSpeed: 3
+    removalTime: 0.5
+    offset: 0.0,0.0
+  - type: ThrowingAngle
+    angle: 315
+  - type: LandAtCursor
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PolygonShape
+          vertices:
+            - -0.20,0.10
+            - -0.10,0.20
+            - 0.20,-0.10
+            - 0.10,-0.20
+        density: 20
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
+  - type: Sprite
+    sprite: Objects/Fun/dildo.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -45
+    damage:
+      types:
+        Blunt: 1
+    angle: 0
+    animation: WeaponArcThrust
+    soundHit:
+      path: /Audio/Weapons/boxingpunch1.ogg
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 1
+  - type: Item
+    size: Tiny
+    sprite: Objects/Fun/dildo.rsi
